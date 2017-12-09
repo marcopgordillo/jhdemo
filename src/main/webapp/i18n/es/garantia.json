@@ -1,0 +1,25 @@
+{
+    "jhdemoApp": {
+        "garantia" : {
+            "home": {
+                "title": "Garantias",
+                "createLabel": "Crear nuevo Garantia",
+                "createOrEditLabel": "Crear o editar Garantia",
+                "search": "Search for Garantia"
+            },
+            "created": "Un nuevo Garantia ha sido creado con el identificador {{ param }}",
+            "updated": "Un Garantia ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Garantia ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Garantia {{ id }}?"
+            },
+            "detail": {
+                "title": "Garantia"
+            },
+            "titulo": "Titulo",
+            "descripcion": "Descripcion",
+            "vigenciaMeses": "Vigencia Meses",
+            "porcentajeCobertura": "Porcentaje Cobertura"
+        }
+    }
+}

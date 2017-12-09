@@ -1,0 +1,32 @@
+{
+    "jhdemoApp": {
+        "contrato" : {
+            "home": {
+                "title": "Contratoes",
+                "createLabel": "Create a new Contrato",
+                "createOrEditLabel": "Create or edit a Contrato",
+                "search": "Search for Contrato"
+            },
+            "created": "A new Contrato is created with identifier {{ param }}",
+            "updated": "A Contrato is updated with identifier {{ param }}",
+            "deleted": "A Contrato is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Contrato"
+            },
+            "codigoContrato": "Codigo Contrato",
+            "inicioContrato": "Inicio Contrato",
+            "plazoMeses": "Plazo Meses",
+            "objetoContrato": "Objeto Contrato",
+            "monto": "Monto",
+            "nacionalidad": "Nacionalidad",
+            "partidaPresupuestaria": "Partida Presupuestaria",
+            "garantia": "Garantia",
+            "tipo": "Tipo",
+            "supervisor": "Supervisor",
+            "proveedor": "Proveedor"
+        }
+    }
+}

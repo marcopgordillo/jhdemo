@@ -1,0 +1,88 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "garantia",
+            "otherEntityName": "garantia",
+            "otherEntityField": "titulo",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "contrato"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipoContrato",
+            "otherEntityField": "titulo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supervisor",
+            "otherEntityName": "supervisor",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "proveedor",
+            "otherEntityName": "proveedor",
+            "otherEntityField": "razonSocial"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigoContrato",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "inicioContrato",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "plazoMeses",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "objetoContrato",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": 5
+        },
+        {
+            "fieldName": "monto",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nacionalidad",
+            "fieldType": "Country",
+            "fieldValues": "ARGENTINA,BOLIVIA,BRASIL,CHILE,COLOMBIA,ECUADOR,GUYANA,PARAGUAY,PERU,SURINAM,URUGUAY,VENEZUELA"
+        },
+        {
+            "fieldName": "partidaPresupuestaria",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171209043542",
+    "entityTableName": "contrato",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

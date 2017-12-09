@@ -1,0 +1,74 @@
+
+<div *ngIf="contrato">
+    <h2><span jhiTranslate="jhdemoApp.contrato.detail.title">Contrato</span> {{contrato.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhdemoApp.contrato.codigoContrato">Codigo Contrato</span></dt>
+        <dd>
+            <span>{{contrato.codigoContrato}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.inicioContrato">Inicio Contrato</span></dt>
+        <dd>
+            <span>{{contrato.inicioContrato | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.plazoMeses">Plazo Meses</span></dt>
+        <dd>
+            <span>{{contrato.plazoMeses}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.objetoContrato">Objeto Contrato</span></dt>
+        <dd>
+            <span>{{contrato.objetoContrato}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.monto">Monto</span></dt>
+        <dd>
+            <span>{{contrato.monto}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.nacionalidad">Nacionalidad</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jhdemoApp.Country.' + contrato.nacionalidad}}">{{contrato.nacionalidad}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.partidaPresupuestaria">Partida Presupuestaria</span></dt>
+        <dd>
+            <span>{{contrato.partidaPresupuestaria}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.garantia">Garantia</span></dt>
+        <dd>
+            <div *ngIf="contrato.garantia">
+                <a [routerLink]="['/garantia', contrato.garantia?.id]">{{contrato.garantia?.titulo}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.tipo">Tipo</span></dt>
+        <dd>
+            <div *ngIf="contrato.tipo">
+                <a [routerLink]="['/tipo-contrato', contrato.tipo?.id]">{{contrato.tipo?.titulo}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.supervisor">Supervisor</span></dt>
+        <dd>
+            <div *ngIf="contrato.supervisor">
+                <a [routerLink]="['/supervisor', contrato.supervisor?.id]">{{contrato.supervisor?.nombre}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contrato.proveedor">Proveedor</span></dt>
+        <dd>
+            <div *ngIf="contrato.proveedor">
+                <a [routerLink]="['/proveedor', contrato.proveedor?.id]">{{contrato.proveedor?.razonSocial}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contrato/'+ contrato.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

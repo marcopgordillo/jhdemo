@@ -1,0 +1,24 @@
+{
+    "jhdemoApp": {
+        "enlace" : {
+            "home": {
+                "title": "Enlaces",
+                "createLabel": "Create a new Enlace",
+                "createOrEditLabel": "Create or edit a Enlace",
+                "search": "Search for Enlace"
+            },
+            "created": "A new Enlace is created with identifier {{ param }}",
+            "updated": "A Enlace is updated with identifier {{ param }}",
+            "deleted": "A Enlace is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Enlace {{ id }}?"
+            },
+            "detail": {
+                "title": "Enlace"
+            },
+            "enlace": "Enlace",
+            "year": "Year",
+            "contrato": "Contrato"
+        }
+    }
+}

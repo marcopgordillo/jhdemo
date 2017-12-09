@@ -1,0 +1,23 @@
+{
+    "jhdemoApp": {
+        "tipoContrato" : {
+            "home": {
+                "title": "Tipo Contratoes",
+                "createLabel": "Create a new Tipo Contrato",
+                "createOrEditLabel": "Create or edit a Tipo Contrato",
+                "search": "Search for Tipo Contrato"
+            },
+            "created": "A new Tipo Contrato is created with identifier {{ param }}",
+            "updated": "A Tipo Contrato is updated with identifier {{ param }}",
+            "deleted": "A Tipo Contrato is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Contrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Contrato"
+            },
+            "titulo": "Titulo",
+            "descripcion": "Descripcion"
+        }
+    }
+}

@@ -7,6 +7,12 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "contrato": "Contrato",
+                "garantia": "Garantia",
+                "enlace": "Enlace",
+                "tipoContrato": "Tipo Contrato",
+                "supervisor": "Supervisor",
+                "proveedor": "Proveedor",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

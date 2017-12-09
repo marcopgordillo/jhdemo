@@ -1,0 +1,19 @@
+{
+    "jhdemoApp": {
+        "Country" : {
+            "null": "",
+            "ARGENTINA": "ARGENTINA",
+            "BOLIVIA": "BOLIVIA",
+            "BRASIL": "BRASIL",
+            "CHILE": "CHILE",
+            "COLOMBIA": "COLOMBIA",
+            "ECUADOR": "ECUADOR",
+            "GUYANA": "GUYANA",
+            "PARAGUAY": "PARAGUAY",
+            "PERU": "PERU",
+            "SURINAM": "SURINAM",
+            "URUGUAY": "URUGUAY",
+            "VENEZUELA": "VENEZUELA"
+        }
+    }
+}

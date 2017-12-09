@@ -1,0 +1,80 @@
+entity Contrato {
+  codigoContrato String required,
+  inicioContrato LocalDate required,
+  plazoMeses Integer required,
+  objetoContrato String required minlength(5),
+  monto Float required,
+  nacionalidad Country,
+  partidaPresupuestaria String required,
+}
+
+entity Garantia {
+  titulo String required,
+  descripcion TextBlob required,
+  vigenciaMeses Integer required,
+  porcentajeCobertura Float required
+}
+
+entity Enlace {
+  enlace String required,
+  year Integer required
+}
+
+entity TipoContrato {
+  titulo String required,
+  descripcion TextBlob required
+}
+
+entity Supervisor {
+  nombre String required,
+  identificacion String required,
+  cargo String required,
+  telefono String,
+  email String required
+}
+
+entity Proveedor {
+  razonSocial String required,
+  ruc String minlength(13) maxlength(13) required,
+  contactoNombre String,
+  direccion String,
+  telefono String,
+  email String,
+}
+
+enum Country {
+  ARGENTINA,
+  BOLIVIA,
+  BRASIL,
+  CHILE,
+  COLOMBIA,
+  ECUADOR,
+  GUYANA,
+  PARAGUAY,
+  PERU,
+  SURINAM,
+  URUGUAY,
+  VENEZUELA
+}
+
+relationship ManyToOne {
+  Contrato{tipo(titulo)} to TipoContrato,
+  Contrato{supervisor(nombre)} to Supervisor,
+  Contrato{proveedor(razonSocial)} to Proveedor,
+  Enlace{contrato(objetoContrato)} to Contrato
+}
+
+relationship OneToOne {
+  Contrato{garantia(titulo)} to Garantia
+}
+
+// Set pagination options
+paginate Contrato, Supervisor with infinite-scroll
+paginate Garantia with pagination
+
+//dto * with mapstruct
+
+//service all with serviceImpl except Contrato, Supervisor
+// Set service options to all except few
+// Set an angular suffix
+// angularSuffix * with contratos

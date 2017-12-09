@@ -1,0 +1,153 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myContratoLabel" jhiTranslate="jhdemoApp.contrato.home.createOrEditLabel">Create or edit a Contrato</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!contrato.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="contrato.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.codigoContrato" for="field_codigoContrato">Codigo Contrato</label>
+            <input type="text" class="form-control" name="codigoContrato" id="field_codigoContrato"
+                [(ngModel)]="contrato.codigoContrato" required/>
+            <div [hidden]="!(editForm.controls.codigoContrato?.dirty && editForm.controls.codigoContrato?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.codigoContrato?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.inicioContrato" for="field_inicioContrato">Inicio Contrato</label>
+            <div class="input-group">
+                <input id="field_inicioContrato" type="text" class="form-control" name="inicioContrato" ngbDatepicker  #inicioContratoDp="ngbDatepicker" [(ngModel)]="contrato.inicioContrato"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="inicioContratoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.inicioContrato?.dirty && editForm.controls.inicioContrato?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.inicioContrato?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.plazoMeses" for="field_plazoMeses">Plazo Meses</label>
+            <input type="number" class="form-control" name="plazoMeses" id="field_plazoMeses"
+                [(ngModel)]="contrato.plazoMeses" required/>
+            <div [hidden]="!(editForm.controls.plazoMeses?.dirty && editForm.controls.plazoMeses?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.plazoMeses?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.plazoMeses?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.objetoContrato" for="field_objetoContrato">Objeto Contrato</label>
+            <input type="text" class="form-control" name="objetoContrato" id="field_objetoContrato"
+                [(ngModel)]="contrato.objetoContrato" required minlength="5"/>
+            <div [hidden]="!(editForm.controls.objetoContrato?.dirty && editForm.controls.objetoContrato?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.objetoContrato?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.objetoContrato?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 5 }">
+                   This field is required to be at least 5 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.monto" for="field_monto">Monto</label>
+            <input type="number" class="form-control" name="monto" id="field_monto"
+                [(ngModel)]="contrato.monto" required/>
+            <div [hidden]="!(editForm.controls.monto?.dirty && editForm.controls.monto?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.monto?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.monto?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.nacionalidad" for="field_nacionalidad">Nacionalidad</label>
+            <select class="form-control" name="nacionalidad" [(ngModel)]="contrato.nacionalidad" id="field_nacionalidad" >
+                <option value="ARGENTINA">{{'jhdemoApp.Country.ARGENTINA' | translate}}</option>
+                <option value="BOLIVIA">{{'jhdemoApp.Country.BOLIVIA' | translate}}</option>
+                <option value="BRASIL">{{'jhdemoApp.Country.BRASIL' | translate}}</option>
+                <option value="CHILE">{{'jhdemoApp.Country.CHILE' | translate}}</option>
+                <option value="COLOMBIA">{{'jhdemoApp.Country.COLOMBIA' | translate}}</option>
+                <option value="ECUADOR">{{'jhdemoApp.Country.ECUADOR' | translate}}</option>
+                <option value="GUYANA">{{'jhdemoApp.Country.GUYANA' | translate}}</option>
+                <option value="PARAGUAY">{{'jhdemoApp.Country.PARAGUAY' | translate}}</option>
+                <option value="PERU">{{'jhdemoApp.Country.PERU' | translate}}</option>
+                <option value="SURINAM">{{'jhdemoApp.Country.SURINAM' | translate}}</option>
+                <option value="URUGUAY">{{'jhdemoApp.Country.URUGUAY' | translate}}</option>
+                <option value="VENEZUELA">{{'jhdemoApp.Country.VENEZUELA' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.partidaPresupuestaria" for="field_partidaPresupuestaria">Partida Presupuestaria</label>
+            <input type="text" class="form-control" name="partidaPresupuestaria" id="field_partidaPresupuestaria"
+                [(ngModel)]="contrato.partidaPresupuestaria" required/>
+            <div [hidden]="!(editForm.controls.partidaPresupuestaria?.dirty && editForm.controls.partidaPresupuestaria?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.partidaPresupuestaria?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.garantia" for="field_garantia">Garantia</label>
+            <select class="form-control" id="field_garantia" name="garantia" [(ngModel)]="contrato.garantia">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="garantiaOption.id === contrato.garantia?.id ? contrato.garantia : garantiaOption" *ngFor="let garantiaOption of garantias; trackBy: trackGarantiaById">{{garantiaOption.titulo}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" [(ngModel)]="contrato.tipo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoContratoOption.id === contrato.tipo?.id ? contrato.tipo : tipoContratoOption" *ngFor="let tipoContratoOption of tipocontratoes; trackBy: trackTipoContratoById">{{tipoContratoOption.titulo}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.supervisor" for="field_supervisor">Supervisor</label>
+            <select class="form-control" id="field_supervisor" name="supervisor" [(ngModel)]="contrato.supervisor" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="supervisorOption.id === contrato.supervisor?.id ? contrato.supervisor : supervisorOption" *ngFor="let supervisorOption of supervisors; trackBy: trackSupervisorById">{{supervisorOption.nombre}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhdemoApp.contrato.proveedor" for="field_proveedor">Proveedor</label>
+            <select class="form-control" id="field_proveedor" name="proveedor" [(ngModel)]="contrato.proveedor" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="proveedorOption.id === contrato.proveedor?.id ? contrato.proveedor : proveedorOption" *ngFor="let proveedorOption of proveedors; trackBy: trackProveedorById">{{proveedorOption.razonSocial}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

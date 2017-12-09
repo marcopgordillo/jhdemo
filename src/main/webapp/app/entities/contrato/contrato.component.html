@@ -1,0 +1,107 @@
+<div>
+    <h2>
+        <span jhiTranslate="jhdemoApp.contrato.home.title">Contratoes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-contrato" [routerLink]="['/', { outlets: { popup: ['contrato-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jhdemoApp.contrato.home.createLabel">
+            Create new Contrato
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jhdemoApp.contrato.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="contratoes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="codigoContrato"><span jhiTranslate="jhdemoApp.contrato.codigoContrato">Codigo Contrato</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inicioContrato"><span jhiTranslate="jhdemoApp.contrato.inicioContrato">Inicio Contrato</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="plazoMeses"><span jhiTranslate="jhdemoApp.contrato.plazoMeses">Plazo Meses</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="objetoContrato"><span jhiTranslate="jhdemoApp.contrato.objetoContrato">Objeto Contrato</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="monto"><span jhiTranslate="jhdemoApp.contrato.monto">Monto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nacionalidad"><span jhiTranslate="jhdemoApp.contrato.nacionalidad">Nacionalidad</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="partidaPresupuestaria"><span jhiTranslate="jhdemoApp.contrato.partidaPresupuestaria">Partida Presupuestaria</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="garantia.titulo"><span jhiTranslate="jhdemoApp.contrato.garantia">Garantia</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tipo.titulo"><span jhiTranslate="jhdemoApp.contrato.tipo">Tipo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="supervisor.nombre"><span jhiTranslate="jhdemoApp.contrato.supervisor">Supervisor</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="proveedor.razonSocial"><span jhiTranslate="jhdemoApp.contrato.proveedor">Proveedor</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let contrato of contratoes ;trackBy: trackId">
+                <td><a [routerLink]="['../contrato', contrato.id ]">{{contrato.id}}</a></td>
+                <td>{{contrato.codigoContrato}}</td>
+                <td>{{contrato.inicioContrato | date:'mediumDate'}}</td>
+                <td>{{contrato.plazoMeses}}</td>
+                <td>{{contrato.objetoContrato}}</td>
+                <td>{{contrato.monto}}</td>
+                <td jhiTranslate="{{'jhdemoApp.Country.' + contrato.nacionalidad}}">{{contrato.nacionalidad}}</td>
+                <td>{{contrato.partidaPresupuestaria}}</td>
+                <td>
+                    <div *ngIf="contrato.garantia">
+                        <a [routerLink]="['../garantia', contrato.garantia?.id ]" >{{contrato.garantia?.titulo}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="contrato.tipo">
+                        <a [routerLink]="['../tipo-contrato', contrato.tipo?.id ]" >{{contrato.tipo?.titulo}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="contrato.supervisor">
+                        <a [routerLink]="['../supervisor', contrato.supervisor?.id ]" >{{contrato.supervisor?.nombre}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="contrato.proveedor">
+                        <a [routerLink]="['../proveedor', contrato.proveedor?.id ]" >{{contrato.proveedor?.razonSocial}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../contrato', contrato.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'contrato/'+ contrato.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'contrato/'+ contrato.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

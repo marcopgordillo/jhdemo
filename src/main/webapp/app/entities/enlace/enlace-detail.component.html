@@ -1,0 +1,36 @@
+
+<div *ngIf="enlace">
+    <h2><span jhiTranslate="jhdemoApp.enlace.detail.title">Enlace</span> {{enlace.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhdemoApp.enlace.enlace">Enlace</span></dt>
+        <dd>
+            <span>{{enlace.enlace}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.enlace.year">Year</span></dt>
+        <dd>
+            <span>{{enlace.year}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.enlace.contrato">Contrato</span></dt>
+        <dd>
+            <div *ngIf="enlace.contrato">
+                <a [routerLink]="['/contrato', enlace.contrato?.id]">{{enlace.contrato?.objetoContrato}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'enlace/'+ enlace.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
