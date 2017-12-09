@@ -1,0 +1,19 @@
+version: '2'
+services:
+    jhdemo-app:
+        image: jhdemo
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://jhdemo-postgresql:5432/jhdemo
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=jhdemo-elasticsearch:9300
+        ports:
+            - 8080:8080
+    jhdemo-postgresql:
+        extends:
+            file: postgresql.yml
+            service: jhdemo-postgresql
+    jhdemo-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: jhdemo-elasticsearch
