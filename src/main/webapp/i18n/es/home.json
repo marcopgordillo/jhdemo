@@ -1,7 +1,7 @@
 {
     "home": {
-        "title": "¡Bienvenido, Java Hipster!",
-        "subtitle": "Esta es su página de inicio",
+        "title": "Contratos UNASUR",
+        "subtitle": "Aplicación de Contratos",
         "logged": {
             "message": "Está conectado como \"{{username}}\"."
         },
