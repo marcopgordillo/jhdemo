@@ -3,7 +3,8 @@
         "title": "Contratos UNASUR",
         "subtitle": "Aplicación de Contratos",
         "logged": {
-            "message": "Está conectado como \"{{username}}\"."
+            "message": "Está conectado como \"{{username}}\".",
+            "buttonContrato": "Ir a Contratos"
         },
         "question": "Si tiene preguntas sobre JHipster:",
         "link": {

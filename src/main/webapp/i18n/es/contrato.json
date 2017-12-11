@@ -2,7 +2,7 @@
     "jhdemoApp": {
         "contrato" : {
             "home": {
-                "title": "Contratoes",
+                "title": "Contratos",
                 "createLabel": "Crear nuevo Contrato",
                 "createOrEditLabel": "Crear o editar Contrato",
                 "search": "Search for Contrato"

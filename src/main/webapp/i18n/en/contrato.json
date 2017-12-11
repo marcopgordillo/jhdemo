@@ -2,31 +2,31 @@
     "jhdemoApp": {
         "contrato" : {
             "home": {
-                "title": "Contratoes",
-                "createLabel": "Create a new Contrato",
-                "createOrEditLabel": "Create or edit a Contrato",
-                "search": "Search for Contrato"
+                "title": "Contracts",
+                "createLabel": "Create a new Contract",
+                "createOrEditLabel": "Create or edit a Contract",
+                "search": "Search for Contract"
             },
-            "created": "A new Contrato is created with identifier {{ param }}",
-            "updated": "A Contrato is updated with identifier {{ param }}",
-            "deleted": "A Contrato is deleted with identifier {{ param }}",
+            "created": "A new Contract is created with identifier {{ param }}",
+            "updated": "A Contract is updated with identifier {{ param }}",
+            "deleted": "A Contract is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Contrato {{ id }}?"
+                "question": "Are you sure you want to delete Contract {{ id }}?"
             },
             "detail": {
-                "title": "Contrato"
+                "title": "Contract"
             },
-            "codigoContrato": "Codigo Contrato",
-            "inicioContrato": "Inicio Contrato",
-            "plazoMeses": "Plazo Meses",
-            "objetoContrato": "Objeto Contrato",
-            "monto": "Monto",
-            "nacionalidad": "Nacionalidad",
-            "partidaPresupuestaria": "Partida Presupuestaria",
-            "garantia": "Garantia",
-            "tipo": "Tipo",
+            "codigoContrato": "Contract Code",
+            "inicioContrato": "Contract Start at",
+            "plazoMeses": "Month term",
+            "objetoContrato": "Contract Subject",
+            "monto": "Mount",
+            "nacionalidad": "Nacionality",
+            "partidaPresupuestaria": "Budget Item",
+            "garantia": "Warranty",
+            "tipo": "Type",
             "supervisor": "Supervisor",
-            "proveedor": "Proveedor"
+            "proveedor": "Provider"
         }
     }
 }
