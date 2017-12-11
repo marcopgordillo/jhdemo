@@ -1,13 +1,13 @@
 import { browser, element, by } from 'protractor';
 import { NavBarPage } from './../page-objects/jhi-page-objects';
-import * as path from 'path';
+//import * as path from 'path';
 describe('TipoContrato e2e test', () => {
 
     let navBarPage: NavBarPage;
     let tipoContratoDialogPage: TipoContratoDialogPage;
     let tipoContratoComponentsPage: TipoContratoComponentsPage;
-    const fileToUpload = '../../../../main/webapp/content/images/logo-jhipster.png';
-    const absolutePath = path.resolve(__dirname, fileToUpload);
+    //const fileToUpload = '../../../../main/webapp/content/images/logo-jhipster.png';
+    //const absolutePath = path.resolve(__dirname, fileToUpload);
 
     beforeAll(() => {
         browser.get('/');
