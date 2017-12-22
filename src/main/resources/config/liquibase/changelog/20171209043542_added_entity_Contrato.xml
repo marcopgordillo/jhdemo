@@ -55,11 +55,11 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="supervisor_id" type="bigint">
+            <column name="administrador_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
-            <column name="proveedor_id" type="bigint">
+            <column name="contratista_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

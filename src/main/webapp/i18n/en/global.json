@@ -11,8 +11,8 @@
                 "garantia": "Garantia",
                 "enlace": "Enlace",
                 "tipoContrato": "Tipo Contrato",
-                "supervisor": "Supervisor",
-                "proveedor": "Proveedor",
+                "administrador": "Administrador",
+                "contratista": "Contratista",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

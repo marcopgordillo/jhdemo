@@ -43,6 +43,10 @@ public class Garantia implements Serializable {
     @Column(name = "porcentaje_cobertura", nullable = false)
     private Float porcentajeCobertura;
 
+    @Lob
+    @Column(name = "penalidad")
+    private String penalidad;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -103,6 +107,19 @@ public class Garantia implements Serializable {
     public void setPorcentajeCobertura(Float porcentajeCobertura) {
         this.porcentajeCobertura = porcentajeCobertura;
     }
+
+    public String getPenalidad() {
+        return penalidad;
+    }
+
+    public Garantia penalidad(String penalidad) {
+        this.penalidad = penalidad;
+        return this;
+    }
+
+    public void setPenalidad(String penalidad) {
+        this.penalidad = penalidad;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -133,6 +150,7 @@ public class Garantia implements Serializable {
             ", descripcion='" + getDescripcion() + "'" +
             ", vigenciaMeses=" + getVigenciaMeses() +
             ", porcentajeCobertura=" + getPorcentajeCobertura() +
+            ", penalidad='" + getPenalidad() + "'" +
             "}";
     }
 }

@@ -1,0 +1,81 @@
+entity Contrato {
+  codigoContrato String required,
+  inicioContrato LocalDate required,
+  plazoMeses Integer required,
+  objetoContrato String required minlength(5),
+  monto Float required,
+  nacionalidad Country,
+  partidaPresupuestaria String required,
+}
+
+entity Garantia {
+  titulo String required,
+  descripcion TextBlob required,
+  vigenciaMeses Integer required,
+  porcentajeCobertura Float required,
+  penalidad TextBlob
+}
+
+entity Enlace {
+  enlace String required,
+  year Integer required
+}
+
+entity TipoContrato {
+  titulo String required,
+  descripcion TextBlob required
+}
+
+entity Administrador {
+  nombre String required,
+  identificacion String required,
+  cargo String required,
+  telefono String,
+  email String required
+}
+
+entity Contratista {
+  razonSocial String required,
+  ruc String minlength(13) maxlength(13) required,
+  contactoNombre String,
+  direccion String,
+  telefono String,
+  email String,
+}
+
+enum Country {
+  ARGENTINA,
+  BOLIVIA,
+  BRASIL,
+  CHILE,
+  COLOMBIA,
+  ECUADOR,
+  GUYANA,
+  PARAGUAY,
+  PERU,
+  SURINAM,
+  URUGUAY,
+  VENEZUELA
+}
+
+relationship ManyToOne {
+  Contrato{tipo(titulo)} to TipoContrato,
+  Contrato{administrador(nombre)} to Administrador,
+  Contrato{contratista(razonSocial)} to Contratista,
+  Enlace{contrato(objetoContrato)} to Contrato{Enlace}
+}
+
+relationship OneToOne {
+  Contrato{garantia(titulo)} to Garantia
+}
+
+// Set pagination options
+paginate Contrato, Administrador with infinite-scroll
+paginate Garantia with pagination
+
+//dto * with mapstruct
+
+//service all with serviceImpl except Contrato, Administrador
+// Set service options to all except few
+// Set an angular suffix
+// angularSuffix * with contratos

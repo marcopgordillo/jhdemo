@@ -20,17 +20,17 @@
                                  referencedColumnNames="id"
                                  referencedTableName="tipo_contrato"/>
 
-        <addForeignKeyConstraint baseColumnNames="supervisor_id"
+        <addForeignKeyConstraint baseColumnNames="administrador_id"
                                  baseTableName="contrato"
-                                 constraintName="fk_contrato_supervisor_id"
+                                 constraintName="fk_contrato_administrador_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="supervisor"/>
+                                 referencedTableName="administrador"/>
 
-        <addForeignKeyConstraint baseColumnNames="proveedor_id"
+        <addForeignKeyConstraint baseColumnNames="contratista_id"
                                  baseTableName="contrato"
-                                 constraintName="fk_contrato_proveedor_id"
+                                 constraintName="fk_contrato_contratista_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="proveedor"/>
+                                 referencedTableName="contratista"/>
 
     </changeSet>
 </databaseChangeLog>

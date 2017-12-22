@@ -30,6 +30,11 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "penalidad",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
         }
     ],
     "changelogDate": "20171209043543",

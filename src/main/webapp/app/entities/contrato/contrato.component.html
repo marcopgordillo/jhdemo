@@ -39,8 +39,8 @@
             <th jhiSortBy="partidaPresupuestaria"><span jhiTranslate="jhdemoApp.contrato.partidaPresupuestaria">Partida Presupuestaria</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="garantia.titulo"><span jhiTranslate="jhdemoApp.contrato.garantia">Garantia</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="tipo.titulo"><span jhiTranslate="jhdemoApp.contrato.tipo">Tipo</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="supervisor.nombre"><span jhiTranslate="jhdemoApp.contrato.supervisor">Supervisor</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="proveedor.razonSocial"><span jhiTranslate="jhdemoApp.contrato.proveedor">Proveedor</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="administrador.nombre"><span jhiTranslate="jhdemoApp.contrato.administrador">Administrador</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="contratista.razonSocial"><span jhiTranslate="jhdemoApp.contrato.contratista">Contratista</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -65,13 +65,13 @@
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="contrato.supervisor">
-                        <a [routerLink]="['../supervisor', contrato.supervisor?.id ]" >{{contrato.supervisor?.nombre}}</a>
+                    <div *ngIf="contrato.administrador">
+                        <a [routerLink]="['../administrador', contrato.administrador?.id ]" >{{contrato.administrador?.nombre}}</a>
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="contrato.proveedor">
-                        <a [routerLink]="['../proveedor', contrato.proveedor?.id ]" >{{contrato.proveedor?.razonSocial}}</a>
+                    <div *ngIf="contrato.contratista">
+                        <a [routerLink]="['../contratista', contrato.contratista?.id ]" >{{contrato.contratista?.razonSocial}}</a>
                     </div>
                 </td>
                 <td class="text-right">

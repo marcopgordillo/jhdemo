@@ -1,0 +1,26 @@
+{
+    "jhdemoApp": {
+        "administrador" : {
+            "home": {
+                "title": "Administradors",
+                "createLabel": "Crear nuevo Administrador",
+                "createOrEditLabel": "Crear o editar Administrador",
+                "search": "Search for Administrador"
+            },
+            "created": "Un nuevo Administrador ha sido creado con el identificador {{ param }}",
+            "updated": "Un Administrador ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Administrador ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Administrador {{ id }}?"
+            },
+            "detail": {
+                "title": "Administrador"
+            },
+            "nombre": "Nombre",
+            "identificacion": "Identificacion",
+            "cargo": "Cargo",
+            "telefono": "Telefono",
+            "email": "Email"
+        }
+    }
+}

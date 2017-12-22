@@ -1,0 +1,46 @@
+
+<div *ngIf="contratista">
+    <h2><span jhiTranslate="jhdemoApp.contratista.detail.title">Contratista</span> {{contratista.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhdemoApp.contratista.razonSocial">Razon Social</span></dt>
+        <dd>
+            <span>{{contratista.razonSocial}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contratista.ruc">Ruc</span></dt>
+        <dd>
+            <span>{{contratista.ruc}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contratista.contactoNombre">Contacto Nombre</span></dt>
+        <dd>
+            <span>{{contratista.contactoNombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contratista.direccion">Direccion</span></dt>
+        <dd>
+            <span>{{contratista.direccion}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contratista.telefono">Telefono</span></dt>
+        <dd>
+            <span>{{contratista.telefono}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhdemoApp.contratista.email">Email</span></dt>
+        <dd>
+            <span>{{contratista.email}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contratista/'+ contratista.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

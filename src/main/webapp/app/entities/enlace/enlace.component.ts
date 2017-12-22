@@ -41,6 +41,7 @@ enlaces: Enlace[];
         this.enlaceService.query().subscribe(
             (res: ResponseWrapper) => {
                 this.enlaces = res.json;
+                console.log(this.enlaces);
                 this.currentSearch = '';
             },
             (res: ResponseWrapper) => this.onError(res.json)

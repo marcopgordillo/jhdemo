@@ -27,8 +27,8 @@ export class Contrato implements BaseEntity {
         public partidaPresupuestaria?: string,
         public garantia?: BaseEntity,
         public tipo?: BaseEntity,
-        public supervisor?: BaseEntity,
-        public proveedor?: BaseEntity,
+        public administrador?: BaseEntity,
+        public contratista?: BaseEntity,
     ) {
     }
 }

@@ -1,0 +1,27 @@
+{
+    "jhdemoApp": {
+        "contratista" : {
+            "home": {
+                "title": "Contratistas",
+                "createLabel": "Create a new Contratista",
+                "createOrEditLabel": "Create or edit a Contratista",
+                "search": "Search for Contratista"
+            },
+            "created": "A new Contratista is created with identifier {{ param }}",
+            "updated": "A Contratista is updated with identifier {{ param }}",
+            "deleted": "A Contratista is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contratista {{ id }}?"
+            },
+            "detail": {
+                "title": "Contratista"
+            },
+            "razonSocial": "Razon Social",
+            "ruc": "Ruc",
+            "contactoNombre": "Contacto Nombre",
+            "direccion": "Direccion",
+            "telefono": "Telefono",
+            "email": "Email"
+        }
+    }
+}

@@ -66,10 +66,10 @@ public class Contrato implements Serializable {
     private TipoContrato tipo;
 
     @ManyToOne
-    private Supervisor supervisor;
+    private Administrador administrador;
 
     @ManyToOne
-    private Proveedor proveedor;
+    private Contratista contratista;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -197,30 +197,30 @@ public class Contrato implements Serializable {
         this.tipo = tipoContrato;
     }
 
-    public Supervisor getSupervisor() {
-        return supervisor;
+    public Administrador getAdministrador() {
+        return administrador;
     }
 
-    public Contrato supervisor(Supervisor supervisor) {
-        this.supervisor = supervisor;
+    public Contrato administrador(Administrador administrador) {
+        this.administrador = administrador;
         return this;
     }
 
-    public void setSupervisor(Supervisor supervisor) {
-        this.supervisor = supervisor;
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
 
-    public Proveedor getProveedor() {
-        return proveedor;
+    public Contratista getContratista() {
+        return contratista;
     }
 
-    public Contrato proveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+    public Contrato contratista(Contratista contratista) {
+        this.contratista = contratista;
         return this;
     }
 
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+    public void setContratista(Contratista contratista) {
+        this.contratista = contratista;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

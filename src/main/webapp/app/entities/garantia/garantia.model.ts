@@ -7,6 +7,7 @@ export class Garantia implements BaseEntity {
         public descripcion?: any,
         public vigenciaMeses?: number,
         public porcentajeCobertura?: number,
+        public penalidad?: any,
     ) {
     }
 }

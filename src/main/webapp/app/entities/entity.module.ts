@@ -4,8 +4,8 @@ import { JhdemoContratoModule } from './contrato/contrato.module';
 import { JhdemoGarantiaModule } from './garantia/garantia.module';
 import { JhdemoEnlaceModule } from './enlace/enlace.module';
 import { JhdemoTipoContratoModule } from './tipo-contrato/tipo-contrato.module';
-import { JhdemoSupervisorModule } from './supervisor/supervisor.module';
-import { JhdemoProveedorModule } from './proveedor/proveedor.module';
+import { JhdemoAdministradorModule } from './administrador/administrador.module';
+import { JhdemoContratistaModule } from './contratista/contratista.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -14,8 +14,8 @@ import { JhdemoProveedorModule } from './proveedor/proveedor.module';
         JhdemoGarantiaModule,
         JhdemoEnlaceModule,
         JhdemoTipoContratoModule,
-        JhdemoSupervisorModule,
-        JhdemoProveedorModule,
+        JhdemoAdministradorModule,
+        JhdemoContratistaModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

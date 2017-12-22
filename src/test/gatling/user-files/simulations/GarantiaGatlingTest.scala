@@ -68,7 +68,7 @@ class GarantiaGatlingTest extends Simulation {
             .exec(http("Create new garantia")
             .post("/api/garantias")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "titulo":"SAMPLE_TEXT", "descripcion":null, "vigenciaMeses":"0", "porcentajeCobertura":null}""")).asJSON
+            .body(StringBody("""{"id":null, "titulo":"SAMPLE_TEXT", "descripcion":null, "vigenciaMeses":"0", "porcentajeCobertura":null, "penalidad":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_garantia_url"))).exitHereIfFailed
             .pause(10)

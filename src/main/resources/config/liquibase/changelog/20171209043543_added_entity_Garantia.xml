@@ -37,6 +37,10 @@
                 <constraints nullable="false" />
             </column>
 
+            <column name="penalidad" type="clob">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         

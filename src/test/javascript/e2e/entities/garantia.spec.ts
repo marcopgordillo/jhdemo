@@ -1,13 +1,13 @@
 import { browser, element, by } from 'protractor';
 import { NavBarPage } from './../page-objects/jhi-page-objects';
-// import * as path from 'path';
+import * as path from 'path';
 describe('Garantia e2e test', () => {
 
     let navBarPage: NavBarPage;
     let garantiaDialogPage: GarantiaDialogPage;
     let garantiaComponentsPage: GarantiaComponentsPage;
-    // const fileToUpload = '../../../../main/webapp/content/images/logo-jhipster.png';
-    // const absolutePath = path.resolve(__dirname, fileToUpload);
+    const fileToUpload = '../../../../main/webapp/content/images/logo-jhipster.png';
+    const absolutePath = path.resolve(__dirname, fileToUpload);
 
     beforeAll(() => {
         browser.get('/');
@@ -41,6 +41,8 @@ describe('Garantia e2e test', () => {
         expect(garantiaDialogPage.getVigenciaMesesInput()).toMatch('5');
         garantiaDialogPage.setPorcentajeCoberturaInput('5');
         expect(garantiaDialogPage.getPorcentajeCoberturaInput()).toMatch('5');
+        garantiaDialogPage.setPenalidadInput('penalidad');
+        expect(garantiaDialogPage.getPenalidadInput()).toMatch('penalidad');
         garantiaDialogPage.save();
         expect(garantiaDialogPage.getSaveButton().isPresent()).toBeFalsy();
     });
@@ -71,6 +73,7 @@ export class GarantiaDialogPage {
     descripcionInput = element(by.css('textarea#field_descripcion'));
     vigenciaMesesInput = element(by.css('input#field_vigenciaMeses'));
     porcentajeCoberturaInput = element(by.css('input#field_porcentajeCobertura'));
+    penalidadInput = element(by.css('textarea#field_penalidad'));
 
     getModalTitle() {
         return this.modalTitle.getAttribute('jhiTranslate');
@@ -106,6 +109,14 @@ export class GarantiaDialogPage {
 
     getPorcentajeCoberturaInput = function() {
         return this.porcentajeCoberturaInput.getAttribute('value');
+    }
+
+    setPenalidadInput = function(penalidad) {
+        this.penalidadInput.sendKeys(penalidad);
+    }
+
+    getPenalidadInput = function() {
+        return this.penalidadInput.getAttribute('value');
     }
 
     save() {

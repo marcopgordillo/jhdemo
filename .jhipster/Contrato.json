@@ -17,14 +17,14 @@
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "supervisor",
-            "otherEntityName": "supervisor",
+            "relationshipName": "administrador",
+            "otherEntityName": "administrador",
             "otherEntityField": "nombre"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "proveedor",
-            "otherEntityName": "proveedor",
+            "relationshipName": "contratista",
+            "otherEntityName": "contratista",
             "otherEntityField": "razonSocial"
         }
     ],

@@ -10,8 +10,8 @@ import { ContratoService } from '../../../../../../main/webapp/app/entities/cont
 import { Contrato } from '../../../../../../main/webapp/app/entities/contrato/contrato.model';
 import { GarantiaService } from '../../../../../../main/webapp/app/entities/garantia';
 import { TipoContratoService } from '../../../../../../main/webapp/app/entities/tipo-contrato';
-import { SupervisorService } from '../../../../../../main/webapp/app/entities/supervisor';
-import { ProveedorService } from '../../../../../../main/webapp/app/entities/proveedor';
+import { AdministradorService } from '../../../../../../main/webapp/app/entities/administrador';
+import { ContratistaService } from '../../../../../../main/webapp/app/entities/contratista';
 
 describe('Component Tests', () => {
 
@@ -29,8 +29,8 @@ describe('Component Tests', () => {
                 providers: [
                     GarantiaService,
                     TipoContratoService,
-                    SupervisorService,
-                    ProveedorService,
+                    AdministradorService,
+                    ContratistaService,
                     ContratoService
                 ]
             })

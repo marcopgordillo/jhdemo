@@ -44,16 +44,16 @@
                 <a [routerLink]="['/tipo-contrato', contrato.tipo?.id]">{{contrato.tipo?.titulo}}</a>
             </div>
         </dd>
-        <dt><span jhiTranslate="jhdemoApp.contrato.supervisor">Supervisor</span></dt>
+        <dt><span jhiTranslate="jhdemoApp.contrato.administrador">Administrador</span></dt>
         <dd>
-            <div *ngIf="contrato.supervisor">
-                <a [routerLink]="['/supervisor', contrato.supervisor?.id]">{{contrato.supervisor?.nombre}}</a>
+            <div *ngIf="contrato.administrador">
+                <a [routerLink]="['/administrador', contrato.administrador?.id]">{{contrato.administrador?.nombre}}</a>
             </div>
         </dd>
-        <dt><span jhiTranslate="jhdemoApp.contrato.proveedor">Proveedor</span></dt>
+        <dt><span jhiTranslate="jhdemoApp.contrato.contratista">Contratista</span></dt>
         <dd>
-            <div *ngIf="contrato.proveedor">
-                <a [routerLink]="['/proveedor', contrato.proveedor?.id]">{{contrato.proveedor?.razonSocial}}</a>
+            <div *ngIf="contrato.contratista">
+                <a [routerLink]="['/contratista', contrato.contratista?.id]">{{contrato.contratista?.razonSocial}}</a>
             </div>
         </dd>
     </dl>

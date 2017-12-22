@@ -46,8 +46,8 @@ describe('Contrato e2e test', () => {
         expect(contratoDialogPage.getPartidaPresupuestariaInput()).toMatch('partidaPresupuestaria');
         contratoDialogPage.garantiaSelectLastOption();
         contratoDialogPage.tipoSelectLastOption();
-        contratoDialogPage.supervisorSelectLastOption();
-        contratoDialogPage.proveedorSelectLastOption();
+        contratoDialogPage.administradorSelectLastOption();
+        contratoDialogPage.contratistaSelectLastOption();
         contratoDialogPage.save();
         expect(contratoDialogPage.getSaveButton().isPresent()).toBeFalsy();
     });
@@ -83,8 +83,8 @@ export class ContratoDialogPage {
     partidaPresupuestariaInput = element(by.css('input#field_partidaPresupuestaria'));
     garantiaSelect = element(by.css('select#field_garantia'));
     tipoSelect = element(by.css('select#field_tipo'));
-    supervisorSelect = element(by.css('select#field_supervisor'));
-    proveedorSelect = element(by.css('select#field_proveedor'));
+    administradorSelect = element(by.css('select#field_administrador'));
+    contratistaSelect = element(by.css('select#field_contratista'));
 
     getModalTitle() {
         return this.modalTitle.getAttribute('jhiTranslate');
@@ -181,36 +181,36 @@ export class ContratoDialogPage {
         return this.tipoSelect.element(by.css('option:checked')).getText();
     }
 
-    supervisorSelectLastOption = function() {
-        this.supervisorSelect.all(by.tagName('option')).last().click();
+    administradorSelectLastOption = function() {
+        this.administradorSelect.all(by.tagName('option')).last().click();
     }
 
-    supervisorSelectOption = function(option) {
-        this.supervisorSelect.sendKeys(option);
+    administradorSelectOption = function(option) {
+        this.administradorSelect.sendKeys(option);
     }
 
-    getSupervisorSelect = function() {
-        return this.supervisorSelect;
+    getAdministradorSelect = function() {
+        return this.administradorSelect;
     }
 
-    getSupervisorSelectedOption = function() {
-        return this.supervisorSelect.element(by.css('option:checked')).getText();
+    getAdministradorSelectedOption = function() {
+        return this.administradorSelect.element(by.css('option:checked')).getText();
     }
 
-    proveedorSelectLastOption = function() {
-        this.proveedorSelect.all(by.tagName('option')).last().click();
+    contratistaSelectLastOption = function() {
+        this.contratistaSelect.all(by.tagName('option')).last().click();
     }
 
-    proveedorSelectOption = function(option) {
-        this.proveedorSelect.sendKeys(option);
+    contratistaSelectOption = function(option) {
+        this.contratistaSelect.sendKeys(option);
     }
 
-    getProveedorSelect = function() {
-        return this.proveedorSelect;
+    getContratistaSelect = function() {
+        return this.contratistaSelect;
     }
 
-    getProveedorSelectedOption = function() {
-        return this.proveedorSelect.element(by.css('option:checked')).getText();
+    getContratistaSelectedOption = function() {
+        return this.contratistaSelect.element(by.css('option:checked')).getText();
     }
 
     save() {

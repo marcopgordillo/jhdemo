@@ -52,6 +52,9 @@ public class GarantiaResourceIntTest {
     private static final Float DEFAULT_PORCENTAJE_COBERTURA = 1F;
     private static final Float UPDATED_PORCENTAJE_COBERTURA = 2F;
 
+    private static final String DEFAULT_PENALIDAD = "AAAAAAAAAA";
+    private static final String UPDATED_PENALIDAD = "BBBBBBBBBB";
+
     @Autowired
     private GarantiaRepository garantiaRepository;
 
@@ -96,7 +99,8 @@ public class GarantiaResourceIntTest {
             .titulo(DEFAULT_TITULO)
             .descripcion(DEFAULT_DESCRIPCION)
             .vigenciaMeses(DEFAULT_VIGENCIA_MESES)
-            .porcentajeCobertura(DEFAULT_PORCENTAJE_COBERTURA);
+            .porcentajeCobertura(DEFAULT_PORCENTAJE_COBERTURA)
+            .penalidad(DEFAULT_PENALIDAD);
         return garantia;
     }
 
@@ -125,6 +129,7 @@ public class GarantiaResourceIntTest {
         assertThat(testGarantia.getDescripcion()).isEqualTo(DEFAULT_DESCRIPCION);
         assertThat(testGarantia.getVigenciaMeses()).isEqualTo(DEFAULT_VIGENCIA_MESES);
         assertThat(testGarantia.getPorcentajeCobertura()).isEqualTo(DEFAULT_PORCENTAJE_COBERTURA);
+        assertThat(testGarantia.getPenalidad()).isEqualTo(DEFAULT_PENALIDAD);
 
         // Validate the Garantia in Elasticsearch
         Garantia garantiaEs = garantiaSearchRepository.findOne(testGarantia.getId());
@@ -236,7 +241,8 @@ public class GarantiaResourceIntTest {
             .andExpect(jsonPath("$.[*].titulo").value(hasItem(DEFAULT_TITULO.toString())))
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION.toString())))
             .andExpect(jsonPath("$.[*].vigenciaMeses").value(hasItem(DEFAULT_VIGENCIA_MESES)))
-            .andExpect(jsonPath("$.[*].porcentajeCobertura").value(hasItem(DEFAULT_PORCENTAJE_COBERTURA.doubleValue())));
+            .andExpect(jsonPath("$.[*].porcentajeCobertura").value(hasItem(DEFAULT_PORCENTAJE_COBERTURA.doubleValue())))
+            .andExpect(jsonPath("$.[*].penalidad").value(hasItem(DEFAULT_PENALIDAD.toString())));
     }
 
     @Test
@@ -253,7 +259,8 @@ public class GarantiaResourceIntTest {
             .andExpect(jsonPath("$.titulo").value(DEFAULT_TITULO.toString()))
             .andExpect(jsonPath("$.descripcion").value(DEFAULT_DESCRIPCION.toString()))
             .andExpect(jsonPath("$.vigenciaMeses").value(DEFAULT_VIGENCIA_MESES))
-            .andExpect(jsonPath("$.porcentajeCobertura").value(DEFAULT_PORCENTAJE_COBERTURA.doubleValue()));
+            .andExpect(jsonPath("$.porcentajeCobertura").value(DEFAULT_PORCENTAJE_COBERTURA.doubleValue()))
+            .andExpect(jsonPath("$.penalidad").value(DEFAULT_PENALIDAD.toString()));
     }
 
     @Test
@@ -280,7 +287,8 @@ public class GarantiaResourceIntTest {
             .titulo(UPDATED_TITULO)
             .descripcion(UPDATED_DESCRIPCION)
             .vigenciaMeses(UPDATED_VIGENCIA_MESES)
-            .porcentajeCobertura(UPDATED_PORCENTAJE_COBERTURA);
+            .porcentajeCobertura(UPDATED_PORCENTAJE_COBERTURA)
+            .penalidad(UPDATED_PENALIDAD);
 
         restGarantiaMockMvc.perform(put("/api/garantias")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -295,6 +303,7 @@ public class GarantiaResourceIntTest {
         assertThat(testGarantia.getDescripcion()).isEqualTo(UPDATED_DESCRIPCION);
         assertThat(testGarantia.getVigenciaMeses()).isEqualTo(UPDATED_VIGENCIA_MESES);
         assertThat(testGarantia.getPorcentajeCobertura()).isEqualTo(UPDATED_PORCENTAJE_COBERTURA);
+        assertThat(testGarantia.getPenalidad()).isEqualTo(UPDATED_PENALIDAD);
 
         // Validate the Garantia in Elasticsearch
         Garantia garantiaEs = garantiaSearchRepository.findOne(testGarantia.getId());
@@ -356,7 +365,8 @@ public class GarantiaResourceIntTest {
             .andExpect(jsonPath("$.[*].titulo").value(hasItem(DEFAULT_TITULO.toString())))
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION.toString())))
             .andExpect(jsonPath("$.[*].vigenciaMeses").value(hasItem(DEFAULT_VIGENCIA_MESES)))
-            .andExpect(jsonPath("$.[*].porcentajeCobertura").value(hasItem(DEFAULT_PORCENTAJE_COBERTURA.doubleValue())));
+            .andExpect(jsonPath("$.[*].porcentajeCobertura").value(hasItem(DEFAULT_PORCENTAJE_COBERTURA.doubleValue())))
+            .andExpect(jsonPath("$.[*].penalidad").value(hasItem(DEFAULT_PENALIDAD.toString())));
     }
 
     @Test

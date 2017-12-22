@@ -2,7 +2,7 @@
     "jhdemoApp": {
         "contrato" : {
             "home": {
-                "title": "Contratos",
+                "title": "Contratoes",
                 "createLabel": "Crear nuevo Contrato",
                 "createOrEditLabel": "Crear o editar Contrato",
                 "search": "Search for Contrato"
@@ -25,8 +25,8 @@
             "partidaPresupuestaria": "Partida Presupuestaria",
             "garantia": "Garantia",
             "tipo": "Tipo",
-            "supervisor": "Supervisor",
-            "proveedor": "Proveedor"
+            "administrador": "Administrador",
+            "contratista": "Contratista"
         }
     }
 }

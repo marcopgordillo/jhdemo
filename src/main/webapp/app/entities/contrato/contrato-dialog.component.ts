@@ -11,8 +11,8 @@ import { ContratoPopupService } from './contrato-popup.service';
 import { ContratoService } from './contrato.service';
 import { Garantia, GarantiaService } from '../garantia';
 import { TipoContrato, TipoContratoService } from '../tipo-contrato';
-import { Supervisor, SupervisorService } from '../supervisor';
-import { Proveedor, ProveedorService } from '../proveedor';
+import { Administrador, AdministradorService } from '../administrador';
+import { Contratista, ContratistaService } from '../contratista';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -28,9 +28,9 @@ export class ContratoDialogComponent implements OnInit {
 
     tipocontratoes: TipoContrato[];
 
-    supervisors: Supervisor[];
+    administradors: Administrador[];
 
-    proveedors: Proveedor[];
+    contratistas: Contratista[];
     inicioContratoDp: any;
 
     constructor(
@@ -39,8 +39,8 @@ export class ContratoDialogComponent implements OnInit {
         private contratoService: ContratoService,
         private garantiaService: GarantiaService,
         private tipoContratoService: TipoContratoService,
-        private supervisorService: SupervisorService,
-        private proveedorService: ProveedorService,
+        private administradorService: AdministradorService,
+        private contratistaService: ContratistaService,
         private eventManager: JhiEventManager
     ) {
     }
@@ -62,10 +62,10 @@ export class ContratoDialogComponent implements OnInit {
             }, (res: ResponseWrapper) => this.onError(res.json));
         this.tipoContratoService.query()
             .subscribe((res: ResponseWrapper) => { this.tipocontratoes = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
-        this.supervisorService.query()
-            .subscribe((res: ResponseWrapper) => { this.supervisors = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
-        this.proveedorService.query()
-            .subscribe((res: ResponseWrapper) => { this.proveedors = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        this.administradorService.query()
+            .subscribe((res: ResponseWrapper) => { this.administradors = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        this.contratistaService.query()
+            .subscribe((res: ResponseWrapper) => { this.contratistas = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -110,11 +110,11 @@ export class ContratoDialogComponent implements OnInit {
         return item.id;
     }
 
-    trackSupervisorById(index: number, item: Supervisor) {
+    trackAdministradorById(index: number, item: Administrador) {
         return item.id;
     }
 
-    trackProveedorById(index: number, item: Proveedor) {
+    trackContratistaById(index: number, item: Contratista) {
         return item.id;
     }
 }

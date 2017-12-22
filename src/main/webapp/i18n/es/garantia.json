@@ -19,7 +19,8 @@
             "titulo": "Titulo",
             "descripcion": "Descripcion",
             "vigenciaMeses": "Vigencia Meses",
-            "porcentajeCobertura": "Porcentaje Cobertura"
+            "porcentajeCobertura": "Porcentaje Cobertura",
+            "penalidad": "Penalidad"
         }
     }
 }
